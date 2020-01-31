@@ -270,6 +270,15 @@ Some demos in the form of both Matlab and Python scripts showing how to work wit
 
 Under Mac OS X some numerical accuracy issues have been observed for TV-L2 solvers. This is due to low-level Mac numerical libraries, and may produce failures in some of proxTV tests. Other solvers should work OK.
 
+## Notes on building and running on Windows
+
+    conda env create -f conda_env.yaml  # to create environment
+    conda activate ptv  # To activate environment
+    python prox_tv/prox_tv_build.py  # To build pyd file
+    nosetests  # to run tests
+    cd prox_tv/demos/  # Change to demos directory
+    python demo_filter_image.py  # Run one of the demos
+
 ## Referencing
 
 If you find this toolbox useful please reference the following papers:

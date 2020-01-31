@@ -91,13 +91,23 @@ if _platform == 'darwin':
         extra_compile_args.append('-I/usr/local/opt/openblas/include')
     if os.path.exists('/usr/local/opt/openblas/lib'):
         extra_link_args.append('/usr/local/opt/openblas/lib')
+
+    extra_compile_args.append('-I' + os.path.join('src'))
+elif _platform == 'win32':
+    # OSX clang does not (yet) support openmp, so don't add it to compile
+    # args
+    extra_compile_args.append('/openmp')
+    #extra_link_args.append('/openmp')
+    extra_link_args.append('/LIBPATH:' + os.path.join('lib'))
+
+    extra_compile_args.append('/I' + os.path.join('src'))
 else:
     # OSX clang does not (yet) support openmp, so don't add it to compile
     # args
     extra_compile_args.append('-fopenmp')
     extra_link_args.append('-fopenmp')
 
-extra_compile_args.append('-I'+os.path.join('src'))
+    extra_compile_args.append('-I'+os.path.join('src'))
 
 ffi.set_source(
     '_prox_tv',

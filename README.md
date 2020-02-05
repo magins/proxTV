@@ -275,6 +275,7 @@ Under Mac OS X some numerical accuracy issues have been observed for TV-L2 solve
     conda env create -f conda_env.yaml  # to create environment
     conda activate ptv  # To activate environment
     python prox_tv/prox_tv_build.py  # To build pyd file
+    python -m machomachomangler.cmd.redll _prox_tv.cp37-win_amd64.pyd _prox_tv.cp37-win_amd64_new.pyd liblapack.dll liblapack-proxtv.dll
     nosetests  # to run tests
     cd prox_tv/demos/  # Change to demos directory
     python demo_filter_image.py  # Run one of the demos

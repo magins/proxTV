@@ -1,0 +1,16 @@
+# This file is used to create a conda environment with all the packages
+# required to run the tests and the demos.
+# Create an environment with conda env create -f <this_file>
+name: ptv
+channels:
+- defaults
+- conda-forge
+- anaconda
+dependencies:
+- python=3.6.6  # NOTE, not necessary to pin
+- lapack
+- numpy
+- cffi
+- nose
+- matplotlib
+- scikit-image

@@ -7,7 +7,7 @@ channels:
 - conda-forge
 - anaconda
 dependencies:
-- python=3.6.6  # NOTE, not necessary to pin
+- python=3.8  # NOTE, not necessary to pin
 - lapack
 - numpy
 - cffi
